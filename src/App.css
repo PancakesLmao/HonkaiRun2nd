@@ -1,0 +1,92 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #365486;
+}
+
+header {
+  color: aliceblue;
+}
+
+.icon {
+  height: 4rem;
+  position: relative;
+  top: 1rem
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.world {
+  overflow: hidden;
+  position: relative;
+}
+
+.display {
+  position: absolute;
+  z-index: 998;
+  right: 3.5rem;
+
+}
+.score {
+  position: absolute;
+  z-index: 999;
+  font-size: 3vmin;
+  right: 4rem;
+  top: 8vmin;
+}
+
+.start-screen {
+  position: absolute;
+  z-index: 997;
+  font-size: 4vmin;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide {
+  display: none;
+}
+
+.ground {
+  --left: 0;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
+  left: calc(var(--left) * 1%)
+}
+
+.dino {
+  --bottom: 0;
+  position: absolute;
+  left: 1%;
+  height: 25%;
+  bottom: calc(var(--bottom) * 1%);
+}
+
+.object {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 17%;
+  bottom: 10px;
+}
