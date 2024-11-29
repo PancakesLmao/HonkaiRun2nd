@@ -55,13 +55,17 @@ export default class Player {
 
   handleRun(delta, speedScale) {
     if (this.isJumping) {
-      this.element.src = `./src/assets/bronya-frames/out-5.png`;
+      this.element.src = `${
+        import.meta.env.BASE_URL
+      }/src/assets/bronya-frames/out-5.png`;
       return;
     }
 
     if (this.currentFrameTime >= FRAME_TIME) {
       this.dinoFrame = (this.dinoFrame + 1) % DINO_FRAME_COUNT;
-      this.element.src = `./src/assets/bronya-frames/out-${this.dinoFrame}.png`;
+      this.element.src = `${
+        import.meta.env.BASE_URL
+      }/src/assets/bronya-frames/out-${this.dinoFrame}.png`;
       this.currentFrameTime -= FRAME_TIME;
     }
     this.currentFrameTime += delta * speedScale;
@@ -72,6 +76,8 @@ export default class Player {
   }
 
   setLoseImage() {
-    this.element.src = "./src/assets/bronya-frames/out-1.png";
+    this.element.src = `${
+      import.meta.env.BASE_URL
+    }/src/assets/bronya-frames/out-1.png`;
   }
 }

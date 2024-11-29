@@ -14,7 +14,9 @@ export default class Herta extends Obstacles {
     createObstacle() {
         const obstacle = document.createElement("img");
         obstacle.dataset.object = true;
-        obstacle.src = "./src/assets/herta.webp";
+        obstacle.src = `${
+          import.meta.env.BASE_URL
+        }/src/assets/herta.webp`;
         obstacle.classList.add("object");
         setCustomProperty(obstacle, "--left", 100);
         this.worldElem.append(obstacle);
