@@ -1,12 +1,12 @@
-import { useEffect, useRef} from "react";
-import ground from './assets/grass_ground.jpg'
-import player from './assets/image.gif'
-import './App.css'
-import music1 from './assets/music/silverwolf.wav'
-import music2 from './assets/music/got-a-date-8-bit.mp3'
+import { useEffect, useRef } from "react";
+import ground from "./assets/grass_ground.jpg";
+import player from "./assets/image.gif";
+import "./App.css";
+import music1 from "./assets/music/silverwolf.wav";
+import music2 from "./assets/music/got-a-date-8-bit.mp3";
 import Game from "./function/gameController";
 
-function App() {  
+function App() {
   const playerRef = useRef(null);
   const groundRefs = useRef([]);
   const worldRef = useRef(null);
@@ -34,24 +34,6 @@ function App() {
   }, []);
   return (
     <>
-      <div>
-        <header>
-          <h1>
-            Dinosaur Game{" "}
-            <img
-              src={"./src/assets/dino-lose.png"}
-              alt="icon"
-              className="icon"
-            />{" "}
-            x Reactjs
-            <img
-              src={"./src/assets/logo.svg"}
-              alt="icon"
-              className="icon rotate"
-            />
-          </h1>
-        </header>
-      </div>
       {/* WORLD */}
       <div className="world" data-world ref={worldRef}>
         <div className="display">
@@ -95,4 +77,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

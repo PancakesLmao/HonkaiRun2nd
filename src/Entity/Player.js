@@ -1,4 +1,4 @@
-import { incrementCustomProperty, setCustomProperty, getCustomProperty } from "../updateCustomProperty";
+import { incrementCustomProperty, setCustomProperty, getCustomProperty } from "../function/updateCustomProperty";
 import { JUMP_SPEED, GRAVITY, DINO_FRAME_COUNT, FRAME_TIME } from "../function/config";
 
 export default class Player {
@@ -33,10 +33,6 @@ export default class Player {
     return this.element.getBoundingClientRect();
   }
 
-  setPlayerLose() {
-    this.element.src = "./src/assets/bronya-frames-png/out-1.png";
-  }
-
   handleJump(delta) {
     if (!this.isJumping) return;
 
@@ -59,13 +55,13 @@ export default class Player {
 
   handleRun(delta, speedScale) {
     if (this.isJumping) {
-      this.element.src = `./src/assets/bronya-frames-png/out-5.png`;
+      this.element.src = `./src/assets/bronya-frames/out-5.png`;
       return;
     }
 
     if (this.currentFrameTime >= FRAME_TIME) {
       this.dinoFrame = (this.dinoFrame + 1) % DINO_FRAME_COUNT;
-      this.element.src = `./src/assets/bronya-frames-png/out-${this.dinoFrame}.png`;
+      this.element.src = `./src/assets/bronya-frames/out-${this.dinoFrame}.png`;
       this.currentFrameTime -= FRAME_TIME;
     }
     this.currentFrameTime += delta * speedScale;
@@ -75,7 +71,7 @@ export default class Player {
     return this.element.getBoundingClientRect();
   }
 
-  setLoseImage(imagePath) {
-    this.element.src = imagePath;
+  setLoseImage() {
+    this.element.src = "./src/assets/bronya-frames/out-1.png";
   }
 }

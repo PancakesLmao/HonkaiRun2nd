@@ -8,24 +8,13 @@ export class Obstacles {
     if (new.target === Obstacles) {
       throw new TypeError("Cannot construct Abstract instances directly");
     }
-    if (!worldElem) {
-      console.error("worldElem is undefined in Obstacles");
-    } else {
-      console.log("worldElem in Obstacles constructor:", worldElem);
-    }
 
     this.worldElem = worldElem;
-    if (!worldElem) {
-      console.error("worldElem is undefined in Obstacles");
-    } else {
-      console.log("worldElem in Obstacles constructor:", worldElem);
-    }
     this.speed = speed;
     this.intervalMax = intervalMax;
     this.intervalMin = intervalMin;
     this.obstacles = [];
     this.nextSpawnTime = intervalMin;
-    console.log("worldElem in Obstacles constructor:", this.worldElem);
   }
 
   setUpObstacles() {

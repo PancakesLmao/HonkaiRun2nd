@@ -40,7 +40,6 @@ export default class Game {
     // Game objects
     this.ground = new Ground(groundElems);
     this.player = new Player(playerElem);
-    console.log("worldElem passed to Herta:", worldElem);
     this.obstacle = new Herta(worldElem);
 
     // Bind methods for event listeners
@@ -129,7 +128,7 @@ export default class Game {
   }
 
   handleLose() {
-    this.player.setLoseImage("./src/assets/bronya-frames-png/out-1.png");
+    this.player.setLoseImage();
     if (this.audio2) this.audio2.pause();
 
     setTimeout(() => {
