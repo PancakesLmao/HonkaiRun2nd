@@ -1,7 +1,7 @@
 import { incrementCustomProperty, setCustomProperty, getCustomProperty } from "../updateCustomProperty";
 import { JUMP_SPEED, GRAVITY, DINO_FRAME_COUNT, FRAME_TIME } from "../function/config";
 
-export class Player {
+export default class Player {
   constructor(element) {
     // Player DOM element
     this.element = element;
@@ -10,7 +10,7 @@ export class Player {
     this.dinoFrame = 0;
     this.currentFrameTime = 0;
     this.yVelocity = 0;
-
+    this.onJump = this.onJump.bind(this);
     this.setUpPlayer();
   }
 
