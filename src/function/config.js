@@ -1,6 +1,6 @@
 // Init config
 export const WORLD_WIDTH = 100;
-export const WORLD_HEIGHT = 30;
+export const WORLD_HEIGHT = 35;
 export const SPEED_SCALE_INCREASE = 0.000001;
 // Obstacle config
 export const HERTA_SPEED = 0.05;

@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import ground from "./assets/grass_ground.jpg";
 import player from "./assets/image.gif";
 import "./App.css";
-import music1 from "./assets/music/silverwolf.wav";
 import music2 from "./assets/music/got-a-date-8-bit.mp3";
 import Game from "./function/gameController";
 
@@ -14,6 +13,7 @@ function App() {
   const startScreenRef = useRef(null);
   const audio1Ref = useRef(null);
   const audio2Ref = useRef(null);
+
   useEffect(() => {
     const game = new Game({
       playerElem: playerRef.current,
@@ -37,13 +37,15 @@ function App() {
       {/* WORLD */}
       <div className="world" data-world ref={worldRef}>
         <div className="display">
-          <h3>Score:</h3>
-        </div>
-        <div className="score" data-score ref={scoreRef}>
-          <p>0</p>
+          <h3>
+            Score:{" "}
+            <div className="score" data-score ref={scoreRef}>
+              0
+            </div>
+          </h3>
         </div>
         <div className="start-screen" data-start-screen ref={startScreenRef}>
-          <h4>Press Any Key To Start</h4>
+          <h4>Press any key to start</h4>
         </div>
         <img
           src={ground}
@@ -62,15 +64,12 @@ function App() {
         <img
           src={player}
           alt="player"
-          className="dino"
+          className="player"
           data-player
           ref={playerRef}
         />
       </div>
-      <audio id="myAudio1" loop ref={audio1Ref}>
-        <source src={music1} type="audio/mp3"></source>
-      </audio>
-      <audio id="myAudio2" loop ref={audio2Ref}>
+      <audio id="myAudio2" className="hide" loop ref={audio2Ref} controls muted>
         <source src={music2} type="audio/mp3"></source>
       </audio>
     </>

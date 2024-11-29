@@ -44,21 +44,15 @@ header {
   position: absolute;
   z-index: 998;
   right: 3.5rem;
-
-}
-.score {
-  position: absolute;
-  z-index: 999;
-  font-size: 3vmin;
-  right: 4rem;
-  top: 8vmin;
+  font-size: clamp(1rem, 2.5vw, 1.5rem); 
 }
 
 .start-screen {
   position: absolute;
   z-index: 997;
   font-size: 4vmin;
-  top: 20%;
+  font-size: clamp(1.5rem, 2.5vw, 4rem); 
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -76,7 +70,7 @@ header {
   left: calc(var(--left) * 1%)
 }
 
-.dino {
+.player {
   --bottom: 0;
   position: absolute;
   left: 1%;
